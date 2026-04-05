@@ -42,7 +42,7 @@ const reviews = [
 const advantages = [
   { icon: Shield, title: "100% Handarbeit", desc: "Jedes Fahrzeug wird mit Sorgfalt und Liebe zum Detail behandelt." },
   { icon: Award, title: "Premium Produkte", desc: "Wir verwenden ausschließlich hochwertige Pflegeprodukte." },
-  { icon: Sparkles, title: "Ergebnis-Garantie", desc: "Nicht zufrieden? Wir arbeiten nach, bis es perfekt ist." },
+  { icon: Sparkles, title: "Liebe zum Detail", desc: "Ihr Fahrzeug erhält die Aufmerksamkeit, die es verdient." },
   { icon: Star, title: "4,7 ★ Bewertung", desc: "Unsere Kunden sind begeistert – überzeugen Sie sich selbst." },
 ];
 
