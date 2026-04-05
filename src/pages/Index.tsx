@@ -10,10 +10,26 @@ import washImg from "@/assets/service-wash.jpg";
 import beforeAfterImg from "@/assets/before-after.jpg";
 
 const services = [
-  { title: "Außenwäsche Premium", desc: "Schonende Handwäsche mit hochwertigen Produkten für strahlenden Glanz.", img: washImg },
-  { title: "Innenreinigung", desc: "Gründliche Reinigung des gesamten Innenraums – wie am ersten Tag.", img: interiorImg },
-  { title: "Polieren & Kratzerentfernung", desc: "Professionelles Polieren für eine makellose Lackoberfläche.", img: polishImg },
-  { title: "Versiegelung & Coating", desc: "Langanhaltender Schutz durch hochwertige Versiegelungen.", img: coatingImg },
+  {
+    title: "Außenwäsche Premium",
+    desc: "Schonende Handwäsche mit hochwertigen Produkten für strahlenden Glanz.",
+    img: washImg,
+  },
+  {
+    title: "Innenreinigung",
+    desc: "Gründliche Reinigung des gesamten Innenraums – wie am ersten Tag.",
+    img: interiorImg,
+  },
+  {
+    title: "Polieren & Kratzerentfernung",
+    desc: "Professionelles Polieren für eine makellose Lackoberfläche.",
+    img: polishImg,
+  },
+  {
+    title: "Versiegelung & Coating",
+    desc: "Langanhaltender Schutz durch hochwertige Versiegelungen.",
+    img: coatingImg,
+  },
 ];
 
 const reviews = [
@@ -26,7 +42,7 @@ const reviews = [
 const advantages = [
   { icon: Shield, title: "100% Handarbeit", desc: "Jedes Fahrzeug wird mit Sorgfalt und Liebe zum Detail behandelt." },
   { icon: Award, title: "Premium Produkte", desc: "Wir verwenden ausschließlich hochwertige Pflegeprodukte." },
-  { icon: Sparkles, title: "Liebe zum Detail", desc: "Ihr Fahrzeug erhält die Aufmerksamkeit, die es verdient." },
+  { icon: Sparkles, title: "Ergebnis-Garantie", desc: "Nicht zufrieden? Wir arbeiten nach, bis es perfekt ist." },
   { icon: Star, title: "4,7 ★ Bewertung", desc: "Unsere Kunden sind begeistert – überzeugen Sie sich selbst." },
 ];
 
@@ -36,7 +52,13 @@ export default function Index() {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Professionelle Fahrzeugaufbereitung" width={1920} height={1080} className="w-full h-full object-cover" />
+          <img
+            src={heroImg}
+            alt="Professionelle Fahrzeugaufbereitung"
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/30" />
         </div>
         <div className="container mx-auto px-4 relative z-10 py-20">
@@ -54,7 +76,8 @@ export default function Index() {
               Ihr Fahrzeug verdient <span className="text-gold-gradient">Perfektion</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              Von der schonenden Handwäsche bis zur professionellen Lackaufbereitung – wir bringen Ihr Auto zum Strahlen.
+              Von der schonenden Handwäsche bis zur professionellen Lackaufbereitung – wir bringen Ihr Auto zum
+              Strahlen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -84,7 +107,9 @@ export default function Index() {
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
                 Warum <span className="text-gold-gradient">MS Glanzwerk</span>?
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">Qualität, Erfahrung und Leidenschaft – das macht uns aus.</p>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Qualität, Erfahrung und Leidenschaft – das macht uns aus.
+              </p>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -109,7 +134,9 @@ export default function Index() {
           <AnimatedSection>
             <div className="text-center mb-14">
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Unsere Leistungen</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">Vom Kleinwagen bis zum SUV – wir pflegen jedes Fahrzeug mit Perfektion.</p>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Vom Kleinwagen bis zum SUV – wir pflegen jedes Fahrzeug mit Perfektion.
+              </p>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -117,12 +144,22 @@ export default function Index() {
               <AnimatedSection key={s.title} delay={i * 0.1}>
                 <div className="glass-card overflow-hidden group hover-lift">
                   <div className="aspect-[16/9] overflow-hidden">
-                    <img src={s.img} alt={s.title} loading="lazy" width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                   <div className="p-6">
                     <h3 className="font-heading text-lg font-semibold mb-2">{s.title}</h3>
                     <p className="text-sm text-muted-foreground mb-4">{s.desc}</p>
-                    <Link to="/leistungen" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                    <Link
+                      to="/leistungen"
+                      className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+                    >
                       Mehr erfahren <ChevronRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -130,25 +167,6 @@ export default function Index() {
               </AnimatedSection>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Before/After */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="text-center mb-14">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-                Das Ergebnis spricht für sich
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">Überzeugen Sie sich selbst vom Unterschied.</p>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection>
-            <div className="glass-card overflow-hidden">
-              <img src={beforeAfterImg} alt="Vorher-Nachher Vergleich Fahrzeugaufbereitung" loading="lazy" width={1200} height={600} className="w-full object-cover" />
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
