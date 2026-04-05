@@ -177,7 +177,7 @@ export default function Kontakt() {
           <div className="glass-card overflow-hidden">
             <iframe
               title="MS Glanzwerk Standort"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.5!2d6.636!3d49.442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDI2JzMxLjIiTiA2wrAzOCcwOS42IkU!5e0!3m2!1sde!2sde!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.5!2d6.6361!3d49.4420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b680d7a0df1f%3A0x422d4db817204b0!2sTrierer%20Str.%2074%2C%2066663%20Merzig!5e0!3m2!1sde!2sde!4v1"
               width="100%"
               height="350"
               style={{ border: 0 }}
