@@ -135,7 +135,7 @@ export default function Index() {
             <div className="text-center mb-14">
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Unsere Leistungen</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Vom Kleinwagen bis zum SUV – wir pflegen jedes Fahrzeug mit Perfektion.
+                Vom Kleinwagen bis zum SUV –--- wir pflegen jedes Fahrzeug mit Perfektion.
               </p>
             </div>
           </AnimatedSection>
