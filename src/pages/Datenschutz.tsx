@@ -5,6 +5,7 @@ export default function Datenschutz() {
   return (
     <>
       <SEOHead title="Datenschutzerklärung" description="Datenschutzerklärung von MS Glanzwerk Merzig. Informationen zum Umgang mit Ihren personenbezogenen Daten." path="/datenschutz" />
+      <section className="section-padding">
       <div className="container mx-auto px-4 max-w-3xl">
         <AnimatedSection>
           <h1 className="font-heading text-4xl font-bold mb-10">Datenschutzerklärung</h1>
