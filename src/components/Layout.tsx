@@ -16,9 +16,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" role="document">
       {/* Top bar */}
-      <div className="bg-secondary/50 border-b border-border/20 py-2 px-4 hidden md:block">
+      <header className="bg-secondary/50 border-b border-border/20 py-2 px-4 hidden md:block">
         <div className="container mx-auto flex justify-between items-center text-sm text-muted-foreground">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Trierer Str. 74, 66663 Merzig</span>
@@ -27,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <a href="tel:01772725455" className="flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors">
             <Phone className="w-3.5 h-3.5" /> 0177 2725455
           </a>
-        </div>
+      </header>
       </div>
 
       {/* Navigation */}
