@@ -1,11 +1,8 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { SEOHead } from "@/components/SEOHead";
 
 export default function Impressum() {
   return (
-    <>
-      <SEOHead title="Impressum – MS Glanzwerk Merzig" description="Impressum von MS Glanzwerk, Trierer Str. 74, 66663 Merzig. Angaben gemäß § 5 TMG." />
-      <section className="section-padding">
+    <section className="section-padding">
       <div className="container mx-auto px-4 max-w-3xl">
         <AnimatedSection>
           <h1 className="font-heading text-4xl font-bold mb-10">Impressum</h1>
@@ -47,6 +44,5 @@ export default function Impressum() {
         </AnimatedSection>
       </div>
     </section>
-    </>
   );
 }

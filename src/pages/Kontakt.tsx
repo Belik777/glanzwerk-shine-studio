@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
-import { SEOHead } from "@/components/SEOHead";
 
 export default function Kontakt() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: "" });
@@ -14,9 +13,7 @@ export default function Kontakt() {
   };
 
   return (
-    <>
-      <SEOHead title="Kontakt – MS Glanzwerk Merzig" description="Kontaktieren Sie MS Glanzwerk in Merzig für professionelle Autopflege. Termin vereinbaren unter 0177 2725455." />
-      <section className="section-padding">
+    <section className="section-padding">
       <div className="container mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-14 max-w-2xl mx-auto">
@@ -193,6 +190,5 @@ export default function Kontakt() {
         </AnimatedSection>
       </div>
     </section>
-    </>
   );
 }
