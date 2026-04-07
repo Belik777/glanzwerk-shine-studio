@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SEOHead } from "@/components/SEOHead";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ArrowRight, Check } from "lucide-react";
 import interiorImg from "@/assets/service-interior.jpg";
@@ -35,6 +36,12 @@ const allServices = [
 
 export default function Leistungen() {
   return (
+    <>
+      <SEOHead
+        title="Leistungen"
+        description="Unsere Leistungen: Außenwäsche, Innenreinigung, Polieren, Kratzerentfernung, Versiegelung & Coating. Professionelle Autopflege in Merzig."
+        path="/leistungen"
+      />
     <section className="section-padding">
       <div className="container mx-auto px-4">
         <AnimatedSection>
@@ -79,5 +86,6 @@ export default function Leistungen() {
         </div>
       </div>
     </section>
+    </>
   );
 }

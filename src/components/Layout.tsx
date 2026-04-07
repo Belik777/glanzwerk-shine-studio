@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
+import { useCookieConsent } from "@/contexts/CookieConsentContext";
 
 const navItems = [
   { label: "Startseite", path: "/" },
@@ -13,6 +14,7 @@ const navItems = [
 export function Layout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { openSettings } = useCookieConsent();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -122,6 +124,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 ))}
                 <Link to="/impressum" className="text-sm text-muted-foreground hover:text-primary transition-colors">Impressum</Link>
                 <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">Datenschutz</Link>
+                <button onClick={openSettings} className="text-sm text-muted-foreground hover:text-primary transition-colors text-left">Cookie-Einstellungen</button>
               </div>
             </div>
             <div>
