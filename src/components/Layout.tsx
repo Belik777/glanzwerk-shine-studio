@@ -32,7 +32,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Navigation */}
       <header className="glass-nav sticky top-0 z-50">
-        <nav className="container mx-auto px-4 flex items-center justify-between h-16">
         <div className="container mx-auto px-4 flex items-center justify-between h-16">
           <Link to="/" className="font-heading text-xl font-bold tracking-tight">
             <span className="text-gold-gradient">MS</span> Glanzwerk
