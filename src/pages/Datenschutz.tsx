@@ -55,5 +55,6 @@ export default function Datenschutz() {
         </AnimatedSection>
       </div>
     </section>
+    </>
   );
 }
