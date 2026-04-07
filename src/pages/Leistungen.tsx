@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SEOHead } from "@/components/SEOHead";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ArrowRight, Check } from "lucide-react";
 import interiorImg from "@/assets/service-interior.jpg";
