@@ -27,8 +27,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <a href="tel:01772725455" className="flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors">
             <Phone className="w-3.5 h-3.5" /> 0177 2725455
           </a>
+        </div>
       </header>
-      </div>
 
       {/* Navigation */}
       <nav className="glass-nav sticky top-0 z-50">
