@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
+import { CookieSettingsButton } from "@/components/CookieConsent";
 
 const navItems = [
   { label: "Startseite", path: "/" },
@@ -122,6 +123,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 ))}
                 <Link to="/impressum" className="text-sm text-muted-foreground hover:text-primary transition-colors">Impressum</Link>
                 <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">Datenschutz</Link>
+                <CookieSettingsButton />
               </div>
             </div>
             <div>
