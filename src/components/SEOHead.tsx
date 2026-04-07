@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 interface SEOHeadProps {
   title: string;
@@ -11,17 +11,44 @@ interface SEOHeadProps {
 const BASE_URL = "https://ms-glanzwerk.de";
 
 export function SEOHead({ title, description, canonical, ogTitle, ogDescription }: SEOHeadProps) {
-  const fullCanonical = canonical ? `${BASE_URL}${canonical}` : undefined;
+  useEffect(() => {
+    try {
+      if (typeof document === "undefined") return;
 
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      {fullCanonical && <link rel="canonical" href={fullCanonical} />}
-      <meta property="og:title" content={ogTitle || title} />
-      <meta property="og:description" content={ogDescription || description} />
-      <meta property="og:type" content="website" />
-      {fullCanonical && <meta property="og:url" content={fullCanonical} />}
-    </Helmet>
-  );
+      document.title = title;
+
+      const setMeta = (attr: string, key: string, content: string) => {
+        let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
+        if (!el) {
+          el = document.createElement("meta");
+          el.setAttribute(attr, key);
+          document.head.appendChild(el);
+        }
+        el.setAttribute("content", content);
+      };
+
+      setMeta("name", "description", description);
+      setMeta("property", "og:title", ogTitle || title);
+      setMeta("property", "og:description", ogDescription || description);
+      setMeta("property", "og:type", "website");
+
+      const fullCanonical = canonical ? `${BASE_URL}${canonical}` : undefined;
+
+      if (fullCanonical) {
+        setMeta("property", "og:url", fullCanonical);
+
+        let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+        if (!link) {
+          link = document.createElement("link");
+          link.setAttribute("rel", "canonical");
+          document.head.appendChild(link);
+        }
+        link.setAttribute("href", fullCanonical);
+      }
+    } catch {
+      // Never crash the app
+    }
+  }, [title, description, canonical, ogTitle, ogDescription]);
+
+  return null;
 }
