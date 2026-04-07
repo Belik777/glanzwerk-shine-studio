@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Star, Shield, Award, Sparkles, ChevronRight, Phone, ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SEOHead } from "@/components/SEOHead";
 import heroImg from "@/assets/hero-car.jpg";
 import interiorImg from "@/assets/service-interior.jpg";
 import polishImg from "@/assets/service-polish.jpg";
@@ -49,6 +50,10 @@ const advantages = [
 export default function Index() {
   return (
     <>
+      <SEOHead
+        title="MS Glanzwerk – Professionelle Autopflege & Fahrzeugaufbereitung in Merzig"
+        description="MS Glanzwerk in Merzig: Professionelle Autopflege, Fahrzeugaufbereitung, Polieren, Versiegeln & Innenreinigung. Jetzt Termin vereinbaren!"
+      />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
