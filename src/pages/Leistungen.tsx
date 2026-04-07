@@ -85,5 +85,6 @@ export default function Leistungen() {
         </div>
       </div>
     </section>
+    </>
   );
 }

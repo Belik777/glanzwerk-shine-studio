@@ -197,5 +197,6 @@ export default function Kontakt() {
         </AnimatedSection>
       </div>
     </section>
+    </>
   );
 }
