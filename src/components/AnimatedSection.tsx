@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, Component, type ReactNode } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -8,7 +8,15 @@ interface Props {
   delay?: number;
 }
 
-export function AnimatedSection({ children, className = "", delay = 0 }: Props) {
+class AnimatedSectionErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+  static getDerivedStateFromError() { return { hasError: true }; }
+  render() {
+    return this.state.hasError ? <div className={(this.props as Props).className}>{this.props.children}</div> : this.props.children;
+  }
+}
+
+function AnimatedSectionInner({ children, className = "", delay = 0 }: Props) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -22,5 +30,13 @@ export function AnimatedSection({ children, className = "", delay = 0 }: Props) 
     >
       {children}
     </motion.div>
+  );
+}
+
+export function AnimatedSection(props: Props) {
+  return (
+    <AnimatedSectionErrorBoundary {...props}>
+      <AnimatedSectionInner {...props} />
+    </AnimatedSectionErrorBoundary>
   );
 }
