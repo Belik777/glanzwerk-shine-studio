@@ -98,7 +98,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+        </nav>
+      </header>
 
       <main className="flex-1">{children}</main>
 
