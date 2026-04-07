@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
+import { openCookieSettings } from "@/components/CookieConsent";
 
 const navItems = [
   { label: "Startseite", path: "/" },
@@ -30,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Navigation */}
-      <nav className="glass-nav sticky top-0 z-50">
+      <header className="glass-nav sticky top-0 z-50">
         <div className="container mx-auto px-4 flex items-center justify-between h-16">
           <Link to="/" className="font-heading text-xl font-bold tracking-tight">
             <span className="text-gold-gradient">MS</span> Glanzwerk
@@ -96,7 +97,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </header>
 
       <main className="flex-1">{children}</main>
 
@@ -120,8 +121,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     {item.label}
                   </Link>
                 ))}
-                <Link to="/impressum" className="text-sm text-muted-foreground hover:text-primary transition-colors">Impressum</Link>
-                <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">Datenschutz</Link>
+                  <Link to="/impressum" className="text-sm text-muted-foreground hover:text-primary transition-colors">Impressum</Link>
+                  <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">Datenschutz</Link>
+                  <button onClick={openCookieSettings} className="text-sm text-muted-foreground hover:text-primary transition-colors text-left">Cookie-Einstellungen</button>
               </div>
             </div>
             <div>
