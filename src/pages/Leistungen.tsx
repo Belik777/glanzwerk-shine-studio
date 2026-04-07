@@ -36,6 +36,12 @@ const allServices = [
 
 export default function Leistungen() {
   return (
+    <>
+      <SEOHead
+        title="Leistungen – MS Glanzwerk | Autopflege & Aufbereitung Merzig"
+        description="Außenwäsche, Innenreinigung, Polieren, Versiegelung & Keramik-Coating – alle Leistungen von MS Glanzwerk in Merzig."
+        canonical="/leistungen"
+      />
     <section className="section-padding">
       <div className="container mx-auto px-4">
         <AnimatedSection>
