@@ -8,7 +8,7 @@ import interiorImg from "@/assets/service-interior.jpg";
 import polishImg from "@/assets/service-polish.jpg";
 import coatingImg from "@/assets/service-coating.jpg";
 import washImg from "@/assets/service-wash.jpg";
-import beforeAfterImg from "@/assets/before-after.jpg";
+
 
 const services = [
   {
