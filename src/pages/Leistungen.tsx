@@ -35,6 +35,7 @@ const allServices = [
 ];
 
 export default function Leistungen() {
+  return (
     <>
       <SEOHead
         title="Leistungen"
