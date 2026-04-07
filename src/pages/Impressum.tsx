@@ -52,5 +52,6 @@ export default function Impressum() {
         </AnimatedSection>
       </div>
     </section>
+    </>
   );
 }
