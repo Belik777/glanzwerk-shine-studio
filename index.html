@@ -44,15 +44,22 @@
     }
     </script>
 
-    <!-- SPA redirect handler for GitHub Pages -->
     <script>
       (function() {
-        var redirect = sessionStorage.getItem('spa-redirect');
-        if (redirect) {
-          sessionStorage.removeItem('spa-redirect');
-          if (redirect !== '/' && redirect !== window.location.pathname) {
-            window.history.replaceState(null, '', redirect);
-          }
+        var appRoutes = ["", "ueber-uns", "leistungen", "kontakt", "impressum", "datenschutz"];
+        var segments = window.location.pathname.split("/").filter(Boolean);
+        var firstSegment = segments[0] || "";
+        var hasRepoBase = firstSegment && appRoutes.indexOf(firstSegment) === -1;
+        var basePath = hasRepoBase ? "/" + firstSegment : "";
+        var redirect = sessionStorage.getItem("spa-redirect");
+
+        if (!redirect) return;
+
+        sessionStorage.removeItem("spa-redirect");
+        var targetPath = redirect === "/" ? basePath + "/" : basePath + redirect;
+
+        if (targetPath !== window.location.pathname + window.location.search + window.location.hash) {
+          window.history.replaceState(null, "", targetPath);
         }
       })();
     </script>

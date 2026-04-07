@@ -2,15 +2,22 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0;url=/" />
     <script>
-      // GitHub Pages SPA redirect: preserve path for BrowserRouter
-      var path = window.location.pathname;
-      var search = window.location.search;
-      var hash = window.location.hash;
-      // Redirect to index with path stored in sessionStorage
-      sessionStorage.setItem('spa-redirect', path + search + hash);
-      window.location.replace('/');
+      (function () {
+        var appRoutes = ["", "ueber-uns", "leistungen", "kontakt", "impressum", "datenschutz"];
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        var segments = path.split("/").filter(Boolean);
+        var firstSegment = segments[0] || "";
+        var hasRepoBase = firstSegment && appRoutes.indexOf(firstSegment) === -1;
+        var basePath = hasRepoBase ? "/" + firstSegment : "";
+        var appPath = hasRepoBase ? "/" + segments.slice(1).join("/") : path;
+        var redirectPath = appPath && appPath !== "/" ? appPath : "/";
+
+        sessionStorage.setItem("spa-redirect", redirectPath + search + hash);
+        window.location.replace(basePath + "/");
+      })();
     </script>
     <title>Weiterleitung...</title>
   </head>
