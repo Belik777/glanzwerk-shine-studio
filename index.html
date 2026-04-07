@@ -11,12 +11,15 @@
     <meta property="og:title" content="MS Glanzwerk – Autopflege in Merzig" />
     <meta property="og:description" content="Professionelle Fahrzeugaufbereitung, Polieren & Versiegeln in Merzig. Qualität, die man sieht." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ms-glanzwerk.de/" />
+    <meta property="og:locale" content="de_DE" />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AutoRepair",
       "name": "MS Glanzwerk",
+      "url": "https://ms-glanzwerk.de",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Trierer Str. 74",
@@ -40,11 +43,29 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="./assets/index-FdAB0xUk.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-hHkQXnkq.css">
+
+    <!-- SPA redirect handler for GitHub Pages -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.getItem('spa-redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa-redirect');
+          if (redirect !== '/' && redirect !== window.location.pathname) {
+            window.history.replaceState(null, '', redirect);
+          }
+        }
+      })();
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>MS Glanzwerk – Professionelle Autopflege in Merzig</h1>
+      <p>Professionelle Fahrzeugaufbereitung, Polieren, Versiegeln & Innenreinigung in Merzig. Qualität, die man sieht und fühlt.</p>
+      <p>Adresse: Trierer Str. 74, 66663 Merzig | Telefon: 0177 2725455</p>
+      <p>Öffnungszeiten: Mo–Fr 09:00–17:00 Uhr</p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

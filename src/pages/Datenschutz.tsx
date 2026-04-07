@@ -1,7 +1,14 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Datenschutz() {
   return (
+    <>
+      <SEOHead
+        title="Datenschutz – MS Glanzwerk"
+        description="Datenschutzerklärung von MS Glanzwerk – Informationen zum Umgang mit Ihren personenbezogenen Daten."
+        canonical="/datenschutz"
+      />
     <section className="section-padding">
       <div className="container mx-auto px-4 max-w-3xl">
         <AnimatedSection>
@@ -53,5 +60,6 @@ export default function Datenschutz() {
         </AnimatedSection>
       </div>
     </section>
+    </>
   );
 }
