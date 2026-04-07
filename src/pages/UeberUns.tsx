@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ArrowRight, Heart, Target, Users } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function UeberUns() {
   return (
     <>
+      <SEOHead
+        title="Über uns – MS Glanzwerk | Autopflege Merzig"
+        description="Erfahren Sie mehr über MS Glanzwerk – professionelle Autopflege & Fahrzeugaufbereitung in Merzig mit Leidenschaft und Präzision."
+        canonical="/ueber-uns"
+      />
       <section className="section-padding">
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection>
