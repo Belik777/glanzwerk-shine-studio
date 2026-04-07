@@ -35,8 +35,13 @@ const allServices = [
 ];
 
 export default function Leistungen() {
-  return (
-    <section className="section-padding">
+    <>
+      <SEOHead
+        title="Leistungen"
+        description="Unsere Leistungen: Außenwäsche, Innenreinigung, Polieren, Kratzerentfernung, Versiegelung & Coating. Professionelle Autopflege in Merzig."
+        path="/leistungen"
+      />
+      <section className="section-padding">
       <div className="container mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-14 max-w-2xl mx-auto">
