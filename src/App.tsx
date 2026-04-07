@@ -15,13 +15,21 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
+const APP_ROUTE_SEGMENTS = new Set(["", "ueber-uns", "leistungen", "kontakt", "impressum", "datenschutz"]);
+
+const getRouterBasename = () => {
+  if (typeof window === "undefined") return "/";
+
+  const [firstSegment = ""] = window.location.pathname.split("/").filter(Boolean);
+  return APP_ROUTE_SEGMENTS.has(firstSegment) ? "/" : `/${firstSegment}`;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
       <TooltipProvider>
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={getRouterBasename()}>
           <ScrollToTop />
           <Layout>
             <Routes>
