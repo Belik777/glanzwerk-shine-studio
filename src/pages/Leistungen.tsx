@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ArrowRight, Check } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 import interiorImg from "@/assets/service-interior.jpg";
 import polishImg from "@/assets/service-polish.jpg";
 import coatingImg from "@/assets/service-coating.jpg";
@@ -35,7 +36,9 @@ const allServices = [
 
 export default function Leistungen() {
   return (
-    <section className="section-padding">
+    <>
+      <SEOHead title="Leistungen – MS Glanzwerk Merzig" description="Außenwäsche, Innenreinigung, Polieren, Versiegelung & Coating – alle Autopflege-Leistungen von MS Glanzwerk in Merzig." />
+      <section className="section-padding">
       <div className="container mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-14 max-w-2xl mx-auto">
@@ -79,5 +82,6 @@ export default function Leistungen() {
         </div>
       </div>
     </section>
+    </>
   );
 }

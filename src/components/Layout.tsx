@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
+import { CookieSettingsButton } from "@/components/CookieConsent";
 
 const navItems = [
   { label: "Startseite", path: "/" },
@@ -15,9 +16,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" role="document">
       {/* Top bar */}
-      <div className="bg-secondary/50 border-b border-border/20 py-2 px-4 hidden md:block">
+      <header className="bg-secondary/50 border-b border-border/20 py-2 px-4 hidden md:block">
         <div className="container mx-auto flex justify-between items-center text-sm text-muted-foreground">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Trierer Str. 74, 66663 Merzig</span>
@@ -27,7 +28,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Phone className="w-3.5 h-3.5" /> 0177 2725455
           </a>
         </div>
-      </div>
+      </header>
 
       {/* Navigation */}
       <nav className="glass-nav sticky top-0 z-50">
@@ -122,6 +123,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 ))}
                 <Link to="/impressum" className="text-sm text-muted-foreground hover:text-primary transition-colors">Impressum</Link>
                 <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">Datenschutz</Link>
+                <CookieSettingsButton />
               </div>
             </div>
             <div>
